@@ -94,7 +94,7 @@ while(True):
     
     # print information console
     os.system('clear')
-    print('Numer of images recorded: ' + str(counter) + ' total time: ' + str(rec_duration))
+    print('Number of images recorded: ' + str(counter) + ' total time: ' + str(rec_duration))
 
     time.sleep(sleep_time*60) # in seconds
 
