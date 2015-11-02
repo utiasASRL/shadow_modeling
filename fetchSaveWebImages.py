@@ -21,6 +21,10 @@ import datetime
 import time
 
 
+root_folder = './images/'
+# check if folders exist
+if not os.path.exists(root_folder):
+	os.makedirs(root_folder)
 
 cam_names = {'Cuyamaca_Peak',
               'California_School',
@@ -37,7 +41,7 @@ metadata.loc['Tenerife_Observatory'] = (28.302559, -16.510025, 0, 'http://www.te
 metadata.loc['Kelowna_Airport'] = (49.957878, -119.378719, -8, 'http://www.metcam.navcanada.ca/dawc_images/wxcam/CYLW/CYLW_N-full-e.jpeg', 15, 53, 769, 600)
 metadata.loc['Phoenix_Arizona'] = (33.583734, -112.072115, -7, 'http://www.phoenixvis.net/CreateMain.aspx?t=main&p=/images/photos-main/SOMT1.jpg', 0, 0, 800, 458)
 
-metadata.to_csv('./metadata.csv')
+metadata.to_csv(root_folder + 'metadata.csv')
 
 
 
@@ -47,7 +51,7 @@ counter = 0
 
 while(True):
     for name in metadata.index:
-        path = './' + name
+        path = root_folder + name
 
         # check if folders exist
         if not os.path.exists(path):
